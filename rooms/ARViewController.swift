@@ -68,17 +68,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         if self.isScanning {
             guard let imageAnchor = anchor as? ARImageAnchor else { return }
             
-            let referenceImage = imageAnchor.referenceImage.name
-            
-            let room : String
-            
-            if let index = referenceImage!.index(of: "_") {
-                room = String(referenceImage!.prefix(upTo: index))
-            } else {
-                room = referenceImage!
-            }
-            
-            print(room)
+            let room : String = self.getRoomName(imageName: imageAnchor.referenceImage.name!)
             
             let imagesRoute = [
                 "zelda": "solstice.com_3238353635363032333337@resource.calendar.google.com",
@@ -104,29 +94,17 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                 "pacman": "Pacman"
             ]
             
-            print(String(imagesRoute[String(room)]!))
             Alamofire.request("https://tranquil-springs-77400.herokuapp.com/events/now/\(String(imagesRoute[room]!))").responseJSON {
                 response in
                 if response.result.isSuccess {
                     let isFree : Bool = JSON(response.result.value!)["isFree"].boolValue
                     
-                    print(isFree)
-                    
                     if isFree {
-                        let unicornScene = SCNScene(named: "art.scnassets/Unicorn.scn")!
-                        if let unicornNode = unicornScene.rootNode.childNode(withName: "Unicorn", recursively: false){
-                            node.addChildNode(unicornNode)
-                        }
-                        self.infoLabel.text = "\(imagesNames[room]!) is available!"
+                        self.renderUnicorn(node: node)
                     } else {
-                        let poopScene = SCNScene(named: "art.scnassets/Poop.scn")!
-                        if let poopNode = poopScene.rootNode.childNode(withName: "Poop", recursively: false){
-                            node.addChildNode(poopNode)
-                        }
-                        self.infoLabel.text = "\(imagesNames[room]!) is busy!"
-                        self.infoLabel.font.withSize(CGFloat(24))
-                        self.infoLabel.textAlignment = .right
+                        self.renderPoop(node: node)
                     }
+                    self.showText(isFree: isFree, roomName: imagesNames[room]!)
                     self.isScanning = false
                     
                 } else {
@@ -137,6 +115,40 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             print("you're already scanning")
         }
         
+    }
+    
+    func renderUnicorn(node: SCNNode){
+        let unicornScene = SCNScene(named: "art.scnassets/Unicorn.scn")!
+        if let unicornNode = unicornScene.rootNode.childNode(withName: "Unicorn", recursively: false){
+            node.addChildNode(unicornNode)
+        }
+    }
+    
+    func renderPoop(node: SCNNode){
+        let poopScene = SCNScene(named: "art.scnassets/Poop.scn")!
+        if let poopNode = poopScene.rootNode.childNode(withName: "Poop", recursively: false){
+            node.addChildNode(poopNode)
+        }
+    }
+    
+    func showText(isFree: Bool, roomName: String){
+        if isFree{
+            self.infoLabel.text = "\(roomName) is available!"
+        } else {
+            self.infoLabel.text = "\(roomName) is busy!"
+        }
+    }
+    
+    func getRoomName(imageName: String) -> String {
+        let room : String
+        
+        if let index = imageName.index(of: "_") {
+            room = String(imageName.prefix(upTo: index))
+        } else {
+            room = imageName
+        }
+        
+        return room
     }
     
 }
