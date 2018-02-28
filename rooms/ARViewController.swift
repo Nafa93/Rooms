@@ -10,6 +10,7 @@ import UIKit
 import ARKit
 import Alamofire
 import SwiftyJSON
+import SVProgressHUD
 
 class ARViewController: UIViewController, ARSCNViewDelegate {
 
@@ -17,9 +18,9 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     @IBOutlet weak var infoLabel: UILabel!
     
-    var isScanning = true
+    let constants : Constants = Constants()
     
-    var isResetAvailable = true
+    var isScanning = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,18 +37,17 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        resetTracking()
+        resetTracking(first: true)
     }
 
     @IBAction func didTapReset(_ sender: Any) {
-            resetTracking()
+        resetTracking(first: false)
     }
     
-    func resetTracking() {
-        if isResetAvailable{
-
-            self.isResetAvailable = false
-            print("im in")
+    func resetTracking(first: Bool) {
+        
+            SVProgressHUD.show()
+            
             let configuration = ARWorldTrackingConfiguration()
             
             guard let referenceImages = ARReferenceImage.referenceImages(inGroupNamed: "Logos", bundle: nil) else {
@@ -60,8 +60,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             self.sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
             self.isScanning = true
             self.infoLabel.text = ""
-            self.isResetAvailable = true
-        }
+            
+            SVProgressHUD.dismiss(withDelay: TimeInterval(0.75))
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
@@ -70,29 +70,9 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             
             let room : String = self.getRoomName(imageName: imageAnchor.referenceImage.name!)
             
-            let imagesRoute = [
-                "zelda": "solstice.com_3238353635363032333337@resource.calendar.google.com",
-                "mario": "",
-                "monkey": "solstice.com_2d33373835393738342d313133@resource.calendar.google.com",
-                "prince": "solstice.com_2d3733383537333234@resource.calendar.google.com",
-                "fullthrottle": "solstice.com_38393632313233393835@resource.calendar.google.com",
-                "sonic": "solstice.com_2d3636323331313038323535@resource.calendar.google.com",
-                "tetris": "solstice.com_3231353932353235313638@resource.calendar.google.com",
-                "donkey": "solstice.com_3335313531343932313730@resource.calendar.google.com",
-                "pacman": "solstice.com_36313332303339313939@resource.calendar.google.com"
-            ]
+            let imagesRoute = self.constants.imagesRoute
             
-            let imagesNames = [
-                "zelda": "Zelda",
-                "mario": "Marios Bros.",
-                "monkey": "Monkey Island",
-                "prince": "Prince of Persia",
-                "fullthrottle": "Full Throttle",
-                "sonic": "Sonic",
-                "tetris": "Tetris",
-                "donkey": "Donkey Kong",
-                "pacman": "Pacman"
-            ]
+            let imagesNames = self.constants.imagesNames
             
             Alamofire.request("https://tranquil-springs-77400.herokuapp.com/events/now/\(String(imagesRoute[room]!))").responseJSON {
                 response in
@@ -111,10 +91,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                     print("something went wrong")
                 }
             }
-        } else {
-            print("you're already scanning")
         }
-        
     }
     
     func renderUnicorn(node: SCNNode){

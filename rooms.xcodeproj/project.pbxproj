@@ -10,6 +10,7 @@
 		4562AD9991B2FCEB52ADF79C /* Pods_rooms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B10662ED537196C616E6298 /* Pods_rooms.framework */; };
 		832793CD20447C7300120CA0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832793CC20447C7300120CA0 /* HomeViewController.swift */; };
 		832793D02044A49200120CA0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832793CF2044A49200120CA0 /* UserModel.swift */; };
+		832793D2204723EF00120CA0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832793D1204723EE00120CA0 /* Constants.swift */; };
 		8329D90E203F0C8F0084A038 /* Geomanist-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8329D8FC203F0C8C0084A038 /* Geomanist-Bold.otf */; };
 		8329D90F203F0C8F0084A038 /* Geomanist-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8329D8FD203F0C8C0084A038 /* Geomanist-ExtraLight.otf */; };
 		8329D910203F0C8F0084A038 /* Geomanist-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8329D8FE203F0C8D0084A038 /* Geomanist-Book.otf */; };
@@ -41,6 +42,7 @@
 		7B10662ED537196C616E6298 /* Pods_rooms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rooms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		832793CC20447C7300120CA0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		832793CF2044A49200120CA0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		832793D1204723EE00120CA0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8329D8FC203F0C8C0084A038 /* Geomanist-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geomanist-Bold.otf"; sourceTree = "<group>"; };
 		8329D8FD203F0C8C0084A038 /* Geomanist-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geomanist-ExtraLight.otf"; sourceTree = "<group>"; };
 		8329D8FE203F0C8D0084A038 /* Geomanist-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geomanist-Book.otf"; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				8359051C203B0CC100E85421 /* Info.plist */,
 				8329D920203F14EB0084A038 /* SignInViewController.swift */,
 				832793CC20447C7300120CA0 /* HomeViewController.swift */,
+				832793D1204723EE00120CA0 /* Constants.swift */,
 			);
 			path = rooms;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				832793D02044A49200120CA0 /* UserModel.swift in Sources */,
 				8329D921203F14EB0084A038 /* SignInViewController.swift in Sources */,
 				832793CD20447C7300120CA0 /* HomeViewController.swift in Sources */,
+				832793D2204723EF00120CA0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

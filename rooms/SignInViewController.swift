@@ -46,7 +46,7 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if let token = defaults.string(forKey: "UserToken"){
+        if defaults.string(forKey: "UserToken") != nil{
             print("you're logged in")
 //            NotificationCenter.default.removeObserver(self, name: UserDefaults.didChangeNotification, object: nil)
             performSegue(withIdentifier: "goToHome", sender: self)
@@ -60,7 +60,7 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
 
         if let token = defaults.string(forKey: "UserToken"){
             print("you're logged in")
-            NotificationCenter.default.removeObserver(self, name: UserDefaults.didChangeNotification, object: nil)
+//            NotificationCenter.default.removeObserver(self, name: UserDefaults.didChangeNotification, object: nil)
 
         } else {
             print("you're not")

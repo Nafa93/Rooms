@@ -187,8 +187,8 @@ for a room?</string>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hw2-JL-0Ja">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </arscnView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rua-SF-zfo" userLabel="RefreshButton">
-                                <rect key="frame" x="311" y="730" width="48" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rua-SF-zfo" userLabel="RefreshButton">
+                                <rect key="frame" x="311" y="746" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="beR-Ol-2m1"/>
                                     <constraint firstAttribute="width" constant="48" id="lbR-Y0-2dD"/>
@@ -219,12 +219,10 @@ for a room?</string>
                             <constraint firstAttribute="bottom" secondItem="hw2-JL-0Ja" secondAttribute="bottom" id="41F-4n-5fu"/>
                             <constraint firstAttribute="trailing" secondItem="hw2-JL-0Ja" secondAttribute="trailing" id="Ddy-N5-TE3"/>
                             <constraint firstAttribute="trailing" secondItem="xnO-gh-V1P" secondAttribute="trailing" constant="25" id="Hac-pZ-l3n"/>
-                            <constraint firstItem="Rua-SF-zfo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Lcb-lv-aj0"/>
                             <constraint firstItem="Jhq-Yq-Xnp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="25" id="LfB-mk-swQ"/>
                             <constraint firstItem="xnO-gh-V1P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="25" id="PIq-Jc-zPH"/>
                             <constraint firstItem="xnO-gh-V1P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="STs-6a-pb0"/>
                             <constraint firstItem="hw2-JL-0Ja" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="TMp-iB-dVK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rua-SF-zfo" secondAttribute="trailing" constant="16" id="ZTq-ug-tqw"/>
                             <constraint firstItem="hw2-JL-0Ja" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iiW-4p-aQk"/>
                             <constraint firstItem="Jhq-Yq-Xnp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="j5T-BP-dnm"/>
                         </constraints>
