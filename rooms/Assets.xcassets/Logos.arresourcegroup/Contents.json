@@ -1,0 +1,62 @@
+{
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "resources" : [
+    {
+      "filename" : "donkey_dark.arreferenceimage"
+    },
+    {
+      "filename" : "donkey.arreferenceimage"
+    },
+    {
+      "filename" : "fullthrottle_dark.arreferenceimage"
+    },
+    {
+      "filename" : "fullthrottle.arreferenceimage"
+    },
+    {
+      "filename" : "mario_dark.arreferenceimage"
+    },
+    {
+      "filename" : "mario.arreferenceimage"
+    },
+    {
+      "filename" : "monkey_dark.arreferenceimage"
+    },
+    {
+      "filename" : "monkey.arreferenceimage"
+    },
+    {
+      "filename" : "pacman_dark.arreferenceimage"
+    },
+    {
+      "filename" : "pacman.arreferenceimage"
+    },
+    {
+      "filename" : "prince_dark.arreferenceimage"
+    },
+    {
+      "filename" : "prince.arreferenceimage"
+    },
+    {
+      "filename" : "sonic_dark.arreferenceimage"
+    },
+    {
+      "filename" : "sonic.arreferenceimage"
+    },
+    {
+      "filename" : "tetris_dark.arreferenceimage"
+    },
+    {
+      "filename" : "tetris.arreferenceimage"
+    },
+    {
+      "filename" : "zelda_dark.arreferenceimage"
+    },
+    {
+      "filename" : "zelda.arreferenceimage"
+    }
+  ]
+}

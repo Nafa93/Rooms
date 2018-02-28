@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14092" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IGA-Jw-cTF">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14081.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Geomanist-Bold.otf">
+            <string>Geomanist-Bold</string>
+        </array>
+        <array key="Geomanist-Book.otf">
+            <string>Geomanist-Book</string>
+        </array>
+        <array key="Geomanist-Light.otf">
+            <string>Geomanist-Light</string>
+        </array>
+        <array key="Geomanist-Regular.otf">
+            <string>Geomanist-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="52S-5Q-AXj">
+            <objects>
+                <viewController id="Aeh-G3-9HG" customClass="HomeViewController" customModule="rooms" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JEI-Ft-O4L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="EY5-5x-rlN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Stranger!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Jd-XQ-dal">
+                                <rect key="frame" x="26" y="124" width="150" height="23"/>
+                                <fontDescription key="fontDescription" name="Geomanist-Regular" family="Geomanist" pointSize="23"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wanna check if the room is available?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFj-kY-RjA">
+                                <rect key="frame" x="26" y="202" width="265.66666666666669" height="132"/>
+                                <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="44"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KRA-o3-8Nv">
+                                <rect key="frame" x="0.0" y="632" width="375" height="180"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="Od4-Qb-772"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTz-aK-5oo">
+                                <rect key="frame" x="97.666666666666686" y="544" width="180" height="180"/>
+                                <fontDescription key="fontDescription" name="Geomanist-Light" family="Geomanist" pointSize="22"/>
+                                <state key="normal" title="Scan it!" backgroundImage="ScanButton">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="0bf-sd-D52"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HorizontalRule" translatesAutoresizingMaskIntoConstraints="NO" id="fmS-jU-ibL">
+                                <rect key="frame" x="28" y="161" width="32" height="1"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTt-xF-J0j">
+                                <rect key="frame" x="269" y="44" width="90" height="24"/>
+                                <fontDescription key="fontDescription" name="Geomanist-Book" family="Geomanist" pointSize="18"/>
+                                <state key="normal" title="Sign out" image="SignOut">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapSignOut:" destination="Aeh-G3-9HG" eventType="touchUpInside" id="f3V-cu-t66"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EY5-5x-rlN" firstAttribute="trailing" secondItem="uz7-bA-0EJ" secondAttribute="trailing" id="7dZ-Qp-fiD"/>
+                            <constraint firstItem="fmS-jU-ibL" firstAttribute="leading" secondItem="JEI-Ft-O4L" secondAttribute="leadingMargin" constant="12" id="EbP-ej-9VH"/>
+                            <constraint firstItem="EY5-5x-rlN" firstAttribute="top" secondItem="JEI-Ft-O4L" secondAttribute="top" id="F5V-0d-D8n"/>
+                            <constraint firstAttribute="bottom" secondItem="KRA-o3-8Nv" secondAttribute="bottom" id="PAG-Rb-I52"/>
+                            <constraint firstItem="KTz-aK-5oo" firstAttribute="centerX" secondItem="JEI-Ft-O4L" secondAttribute="centerX" id="PcL-En-Bdh"/>
+                            <constraint firstItem="XTt-xF-J0j" firstAttribute="top" secondItem="uz7-bA-0EJ" secondAttribute="top" id="S5L-02-Zdl"/>
+                            <constraint firstItem="fmS-jU-ibL" firstAttribute="top" secondItem="5Jd-XQ-dal" secondAttribute="bottom" constant="14" id="SKy-uA-EGK"/>
+                            <constraint firstItem="VFj-kY-RjA" firstAttribute="top" secondItem="fmS-jU-ibL" secondAttribute="bottom" constant="40" id="VWv-KD-IP4"/>
+                            <constraint firstItem="5Jd-XQ-dal" firstAttribute="top" secondItem="uz7-bA-0EJ" secondAttribute="top" constant="80" id="ZDU-kX-jQF"/>
+                            <constraint firstItem="KRA-o3-8Nv" firstAttribute="trailing" secondItem="uz7-bA-0EJ" secondAttribute="trailing" id="ahL-fw-Gbn"/>
+                            <constraint firstItem="EY5-5x-rlN" firstAttribute="leading" secondItem="uz7-bA-0EJ" secondAttribute="leading" id="bbo-M1-m6q"/>
+                            <constraint firstItem="5Jd-XQ-dal" firstAttribute="leading" secondItem="uz7-bA-0EJ" secondAttribute="leading" constant="26" id="dF1-c0-gkN"/>
+                            <constraint firstItem="VFj-kY-RjA" firstAttribute="leading" secondItem="uz7-bA-0EJ" secondAttribute="leading" constant="26" id="dQr-7r-JvB"/>
+                            <constraint firstAttribute="bottom" secondItem="EY5-5x-rlN" secondAttribute="bottom" id="di8-yb-eB4"/>
+                            <constraint firstItem="uz7-bA-0EJ" firstAttribute="trailing" secondItem="XTt-xF-J0j" secondAttribute="trailing" constant="16" id="ev0-Zs-zhI"/>
+                            <constraint firstItem="KRA-o3-8Nv" firstAttribute="leading" secondItem="uz7-bA-0EJ" secondAttribute="leading" id="izE-HF-Fpu"/>
+                            <constraint firstItem="uz7-bA-0EJ" firstAttribute="bottom" secondItem="KTz-aK-5oo" secondAttribute="bottom" constant="54" id="uNo-Li-v0z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uz7-bA-0EJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="helloLabel" destination="5Jd-XQ-dal" id="m3n-9x-36B"/>
+                        <segue destination="IGA-Jw-cTF" kind="show" identifier="goToLogin" id="qxy-qD-4f5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BSl-1w-SN1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-910" y="132"/>
+        </scene>
+        <!--Sign In View Controller-->
+        <scene sceneID="WnF-8Y-OLS">
+            <objects>
+                <viewController storyboardIdentifier="SignInViewController" id="IGA-Jw-cTF" customClass="SignInViewController" customModule="rooms" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bKz-4U-EBc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="zrd-nh-bfi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FichasDerecha" translatesAutoresizingMaskIntoConstraints="NO" id="3sN-4e-0Df">
+                                <rect key="frame" x="0.0" y="44" width="375" height="584"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="solstice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Dw-UL-oFD">
+                                <rect key="frame" x="26" y="84" width="62" height="18"/>
+                                <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="18"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3C-Gz-Unn">
+                                <rect key="frame" x="25" y="600" width="325" height="36"/>
+                                <string key="text">Sign in with your Solstice account
+and get started!</string>
+                                <fontDescription key="fontDescription" name="Geomanist-Regular" family="Geomanist" pointSize="18"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9p-kW-Mef">
+                                <rect key="frame" x="25" y="492" width="325" height="88"/>
+                                <string key="text">Looking
+for a room?</string>
+                                <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="44"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3Dw-UL-oFD" firstAttribute="top" secondItem="vgV-L0-qDJ" secondAttribute="top" constant="40" id="2yT-Yz-wfi"/>
+                            <constraint firstAttribute="bottom" secondItem="zrd-nh-bfi" secondAttribute="bottom" id="91r-Ap-Yeu"/>
+                            <constraint firstItem="N3C-Gz-Unn" firstAttribute="top" secondItem="I9p-kW-Mef" secondAttribute="bottom" constant="20" id="GWc-oD-gWy"/>
+                            <constraint firstAttribute="trailing" secondItem="zrd-nh-bfi" secondAttribute="trailing" id="UVD-bQ-aVE"/>
+                            <constraint firstItem="vgV-L0-qDJ" firstAttribute="trailing" secondItem="N3C-Gz-Unn" secondAttribute="trailing" constant="25" id="b1R-98-j9h"/>
+                            <constraint firstItem="vgV-L0-qDJ" firstAttribute="bottom" secondItem="N3C-Gz-Unn" secondAttribute="bottom" constant="142" id="bcK-u8-5z8"/>
+                            <constraint firstItem="3Dw-UL-oFD" firstAttribute="leading" secondItem="vgV-L0-qDJ" secondAttribute="leading" constant="26" id="c0J-v1-GRt"/>
+                            <constraint firstItem="vgV-L0-qDJ" firstAttribute="trailing" secondItem="I9p-kW-Mef" secondAttribute="trailing" constant="25" id="cNa-Vp-KPs"/>
+                            <constraint firstItem="3sN-4e-0Df" firstAttribute="leading" secondItem="vgV-L0-qDJ" secondAttribute="leading" id="evt-vC-Xhb"/>
+                            <constraint firstItem="3sN-4e-0Df" firstAttribute="top" secondItem="vgV-L0-qDJ" secondAttribute="top" id="hic-0G-SUx"/>
+                            <constraint firstItem="zrd-nh-bfi" firstAttribute="top" secondItem="bKz-4U-EBc" secondAttribute="top" id="oRx-xD-J9X"/>
+                            <constraint firstItem="zrd-nh-bfi" firstAttribute="leading" secondItem="bKz-4U-EBc" secondAttribute="leading" id="qEA-XJ-5Xj"/>
+                            <constraint firstItem="vgV-L0-qDJ" firstAttribute="bottom" secondItem="3sN-4e-0Df" secondAttribute="bottom" constant="150" id="qUH-rC-G2O"/>
+                            <constraint firstItem="I9p-kW-Mef" firstAttribute="leading" secondItem="vgV-L0-qDJ" secondAttribute="leading" constant="25" id="rxU-QU-Yy6"/>
+                            <constraint firstItem="3sN-4e-0Df" firstAttribute="trailing" secondItem="vgV-L0-qDJ" secondAttribute="trailing" id="ywC-kI-9Fi"/>
+                            <constraint firstItem="N3C-Gz-Unn" firstAttribute="leading" secondItem="vgV-L0-qDJ" secondAttribute="leading" constant="25" id="zaI-A1-MIg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vgV-L0-qDJ"/>
+                    </view>
+                    <connections>
+                        <segue destination="Aeh-G3-9HG" kind="show" identifier="goToHome" id="dUq-fk-GbE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Uy-ex-gbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1836" y="133"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ARViewController" customModule="rooms" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hw2-JL-0Ja">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rua-SF-zfo" userLabel="RefreshButton">
+                                <rect key="frame" x="311" y="730" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="beR-Ol-2m1"/>
+                                    <constraint firstAttribute="width" constant="48" id="lbR-Y0-2dD"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Refresh"/>
+                                <connections>
+                                    <action selector="didTapReset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2EE-rQ-tf4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnO-gh-V1P">
+                                <rect key="frame" x="25" y="64" width="325" height="25"/>
+                                <fontDescription key="fontDescription" name="Geomanist-Regular" family="Geomanist" pointSize="24"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhq-Yq-Xnp" userLabel="BackButton">
+                                <rect key="frame" x="25" y="64" width="24" height="24"/>
+                                <state key="normal" backgroundImage="Back"/>
+                                <connections>
+                                    <segue destination="Aeh-G3-9HG" kind="show" id="2N9-my-hEb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="hw2-JL-0Ja" secondAttribute="bottom" id="41F-4n-5fu"/>
+                            <constraint firstAttribute="trailing" secondItem="hw2-JL-0Ja" secondAttribute="trailing" id="Ddy-N5-TE3"/>
+                            <constraint firstAttribute="trailing" secondItem="xnO-gh-V1P" secondAttribute="trailing" constant="25" id="Hac-pZ-l3n"/>
+                            <constraint firstItem="Rua-SF-zfo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Lcb-lv-aj0"/>
+                            <constraint firstItem="Jhq-Yq-Xnp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="25" id="LfB-mk-swQ"/>
+                            <constraint firstItem="xnO-gh-V1P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="25" id="PIq-Jc-zPH"/>
+                            <constraint firstItem="xnO-gh-V1P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="STs-6a-pb0"/>
+                            <constraint firstItem="hw2-JL-0Ja" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="TMp-iB-dVK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rua-SF-zfo" secondAttribute="trailing" constant="16" id="ZTq-ug-tqw"/>
+                            <constraint firstItem="hw2-JL-0Ja" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iiW-4p-aQk"/>
+                            <constraint firstItem="Jhq-Yq-Xnp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="j5T-BP-dnm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="infoLabel" destination="xnO-gh-V1P" id="6oJ-7c-SbG"/>
+                        <outlet property="sceneView" destination="hw2-JL-0Ja" id="2M8-Cl-k0W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="133.00492610837438"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Back" width="24" height="24"/>
+        <image name="Background" width="375" height="667"/>
+        <image name="FichasDerecha" width="375" height="516"/>
+        <image name="HorizontalRule" width="32" height="1"/>
+        <image name="Refresh" width="24" height="24"/>
+        <image name="ScanButton" width="180" height="180"/>
+        <image name="SignOut" width="24" height="24"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="2N9-my-hEb"/>
+    </inferredMetricsTieBreakers>
+</document>
