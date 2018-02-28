@@ -35,6 +35,7 @@
 		83590516203B0CBF00E85421 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83590514203B0CBF00E85421 /* Main.storyboard */; };
 		83590518203B0CC100E85421 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83590517203B0CC100E85421 /* Assets.xcassets */; };
 		8359051B203B0CC100E85421 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83590519203B0CC100E85421 /* LaunchScreen.storyboard */; };
+		83C4483920473E0000C634A1 /* ViewAndToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C4483820473E0000C634A1 /* ViewAndToken.swift */; };
 		83E94C37203C92B100150501 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 83E94C36203C92B100150501 /* art.scnassets */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		83590517203B0CC100E85421 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8359051A203B0CC100E85421 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8359051C203B0CC100E85421 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83C4483820473E0000C634A1 /* ViewAndToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAndToken.swift; sourceTree = "<group>"; };
 		83E94C36203C92B100150501 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		D04677E1D2571701F1D773ED /* Pods-rooms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rooms.release.xcconfig"; path = "Pods/Target Support Files/Pods-rooms/Pods-rooms.release.xcconfig"; sourceTree = "<group>"; };
 		DBCB13D57206273FE0EE9DA3 /* Pods-rooms.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rooms.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rooms/Pods-rooms.debug.xcconfig"; sourceTree = "<group>"; };
@@ -94,15 +96,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		832793CE2044A46B00120CA0 /* models */ = {
+		832793CE2044A46B00120CA0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				832793CF2044A49200120CA0 /* UserModel.swift */,
+				83C4483820473E0000C634A1 /* ViewAndToken.swift */,
 			);
-			path = models;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		8329D8FB203F0C710084A038 /* fonts */ = {
+		832793D320472AE400120CA0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				83590512203B0CBF00E85421 /* ARViewController.swift */,
+				8329D920203F14EB0084A038 /* SignInViewController.swift */,
+				832793CC20447C7300120CA0 /* HomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		832793D420472B1D00120CA0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				832793D1204723EE00120CA0 /* Constants.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8329D8FB203F0C710084A038 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				8329D908203F0C8E0084A038 /* Geomanist-Black-Italic.otf */,
@@ -124,7 +145,7 @@
 				8329D905203F0C8E0084A038 /* Geomanist-Ultra-Italic.otf */,
 				8329D901203F0C8D0084A038 /* Geomanist-Ultra.otf */,
 			);
-			path = fonts;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		83590504203B0CBF00E85421 = {
@@ -148,18 +169,16 @@
 		8359050F203B0CBF00E85421 /* rooms */ = {
 			isa = PBXGroup;
 			children = (
-				832793CE2044A46B00120CA0 /* models */,
-				8329D8FB203F0C710084A038 /* fonts */,
+				832793D420472B1D00120CA0 /* Common */,
+				832793D320472AE400120CA0 /* ViewControllers */,
+				832793CE2044A46B00120CA0 /* Models */,
+				8329D8FB203F0C710084A038 /* Fonts */,
 				83E94C36203C92B100150501 /* art.scnassets */,
 				83590510203B0CBF00E85421 /* AppDelegate.swift */,
-				83590512203B0CBF00E85421 /* ARViewController.swift */,
 				83590514203B0CBF00E85421 /* Main.storyboard */,
 				83590517203B0CC100E85421 /* Assets.xcassets */,
 				83590519203B0CC100E85421 /* LaunchScreen.storyboard */,
 				8359051C203B0CC100E85421 /* Info.plist */,
-				8329D920203F14EB0084A038 /* SignInViewController.swift */,
-				832793CC20447C7300120CA0 /* HomeViewController.swift */,
-				832793D1204723EE00120CA0 /* Constants.swift */,
 			);
 			path = rooms;
 			sourceTree = "<group>";
@@ -339,6 +358,7 @@
 				8329D921203F14EB0084A038 /* SignInViewController.swift in Sources */,
 				832793CD20447C7300120CA0 /* HomeViewController.swift in Sources */,
 				832793D2204723EF00120CA0 /* Constants.swift in Sources */,
+				83C4483920473E0000C634A1 /* ViewAndToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

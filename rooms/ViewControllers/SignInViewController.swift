@@ -13,6 +13,8 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
     
     let defaults = UserDefaults.standard
     
+    let viewAndToken : ViewAndToken = ViewAndToken()
+    
     override internal func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,8 +23,33 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
         // Uncomment to automatically sign in the user.
         GIDSignIn.sharedInstance().signInSilently()
         
-        // TODO(developer) Configure the sign-in button look/feel
-        // ...
+        self.createGoogleButton()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didViewAppearedAndTokenObtained), name: Notification.Name("ViewAndToken"), object: nil)
+    }
+    
+    @objc func userDefaultsDidChange(_ notification: Notification) {
+        if defaults.string(forKey: "UserToken") != nil{
+            viewAndToken.TokenObtained = true
+        } else {
+            viewAndToken.TokenObtained = false
+        }
+        NotificationCenter.default.post(name: Notification.Name("ViewAndToken"), object: viewAndToken)
+    }
+    
+    @objc func didViewAppearedAndTokenObtained(_ notification: Notification) {
+        if viewAndToken.TokenObtained && viewAndToken.ViewAppeared {
+            performSegue(withIdentifier: "goToHome", sender: self)
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        viewAndToken.ViewAppeared = true
+        NotificationCenter.default.post(name: Notification.Name("ViewAndToken"), object: viewAndToken)
+    }
+
+    func createGoogleButton(){
         let googleSignInButton = GIDSignInButton()
         view.addSubview(googleSignInButton)
         
@@ -37,33 +64,5 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
         let bottomConstraint = googleSignInButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -64)
         
         NSLayoutConstraint.activate([leftConstraint, rightConstraint, bottomConstraint])
-        
-//        NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
-        
-    }
-    
-    override internal func didReceiveMemoryWarning() {
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        if defaults.string(forKey: "UserToken") != nil{
-            print("you're logged in")
-//            NotificationCenter.default.removeObserver(self, name: UserDefaults.didChangeNotification, object: nil)
-            performSegue(withIdentifier: "goToHome", sender: self)
-        } else {
-            print("you're not")
-        }
-    }
-    
-    @objc func userDefaultsDidChange(_ notification: Notification) {
-        print(notification.description)
-
-        if let token = defaults.string(forKey: "UserToken"){
-            print("you're logged in")
-//            NotificationCenter.default.removeObserver(self, name: UserDefaults.didChangeNotification, object: nil)
-
-        } else {
-            print("you're not")
-        }
     }
 }

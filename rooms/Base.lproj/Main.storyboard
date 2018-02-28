@@ -187,17 +187,6 @@ for a room?</string>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hw2-JL-0Ja">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </arscnView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rua-SF-zfo" userLabel="RefreshButton">
-                                <rect key="frame" x="311" y="746" width="48" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="beR-Ol-2m1"/>
-                                    <constraint firstAttribute="width" constant="48" id="lbR-Y0-2dD"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="Refresh"/>
-                                <connections>
-                                    <action selector="didTapReset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2EE-rQ-tf4"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnO-gh-V1P">
                                 <rect key="frame" x="25" y="64" width="325" height="25"/>
                                 <fontDescription key="fontDescription" name="Geomanist-Regular" family="Geomanist" pointSize="24"/>
@@ -213,10 +202,22 @@ for a room?</string>
                                     <segue destination="Aeh-G3-9HG" kind="show" id="2N9-my-hEb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rua-SF-zfo" userLabel="RefreshButton">
+                                <rect key="frame" x="297" y="734" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="beR-Ol-2m1"/>
+                                    <constraint firstAttribute="width" constant="48" id="lbR-Y0-2dD"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Refresh"/>
+                                <connections>
+                                    <action selector="didTapReset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2EE-rQ-tf4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="hw2-JL-0Ja" secondAttribute="bottom" id="41F-4n-5fu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rua-SF-zfo" secondAttribute="trailing" constant="30" id="4tS-gS-4Ub"/>
                             <constraint firstAttribute="trailing" secondItem="hw2-JL-0Ja" secondAttribute="trailing" id="Ddy-N5-TE3"/>
                             <constraint firstAttribute="trailing" secondItem="xnO-gh-V1P" secondAttribute="trailing" constant="25" id="Hac-pZ-l3n"/>
                             <constraint firstItem="Jhq-Yq-Xnp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="25" id="LfB-mk-swQ"/>
@@ -225,6 +226,7 @@ for a room?</string>
                             <constraint firstItem="hw2-JL-0Ja" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="TMp-iB-dVK"/>
                             <constraint firstItem="hw2-JL-0Ja" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iiW-4p-aQk"/>
                             <constraint firstItem="Jhq-Yq-Xnp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="j5T-BP-dnm"/>
+                            <constraint firstAttribute="bottom" secondItem="Rua-SF-zfo" secondAttribute="bottom" constant="30" id="tbS-V1-7bX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
