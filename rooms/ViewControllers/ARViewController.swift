@@ -128,5 +128,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         return room
     }
     
+    func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
+        print(session, camera)
+    }
 }
 

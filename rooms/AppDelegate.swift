@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleSignIn
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -64,12 +65,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             let familyName = user.profile.familyName.description
             let email = user.profile.email.description
             // ...
-            print(userId, idToken, fullName, givenName, familyName, email, fullName)
-        
-            let user = User(id: userId, token: idToken, completeName: fullName, firstName: givenName, lastName: familyName, mail: email)
+            print(user.authentication.idToken.description)
+            print(user.authentication.clientID.description)
             
-            defaults.set(user.idToken, forKey: "UserToken")
-            defaults.set(user.givenName, forKey: "UserGivenName")
+            let parameters: Parameters = [
+                "token": user.authentication.idToken.description,
+                "client_id": user.authentication.clientID.description
+            ]
+            
+            defaults.set(user.authentication.idToken.description, forKey: "UserToken")
+            defaults.set(user.profile.givenName.description, forKey: "UserGivenName")
+            
+            print(parameters)
+            
+//            Alamofire.request("http://192.168.0.12:3001/setToken", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON {
+//                response in
+//                if response.result.isSuccess {
+//                    print("token received!")
+//                } else {
+//                    print("something went wrong")
+//                }
+////                print(response.result.value!)
+//            }
         }
     }
     
